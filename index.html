@@ -729,11 +729,12 @@ width="60">
 
         </div>
 
-        <form
+<form
     id="rewardForm"
     method="POST"
     action="https://script.google.com/macros/s/AKfycbz18KIoGTZiWVIQDMfaoT7_yyXlIa3Qw4TCk-DgIQM9QLPhgJ4Xv02oJdxV_mWjOuY/exec"
-    target="rewardSubmitFrame">
+    target="rewardSubmitFrame"
+    onsubmit="submitRewardForm(event)">
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">
@@ -924,16 +925,63 @@ document.getElementById("rewardClose").onclick = function() {
 
 };
 
-document.getElementById("rewardForm").addEventListener(
-    "submit",
-    function() {
 
-        document.getElementById("rewardForm").style.display = "none";
+function submitRewardForm(event) {
 
-        document.getElementById("rewardSuccess").style.display = "block";
+    event.preventDefault();
 
-    }
-);
+    const form = document.getElementById("rewardForm");
+
+    const email =
+        document.getElementById("rewardEmail").value.trim();
+
+    const mobile =
+        document.getElementById("rewardMobile").value.trim();
+
+    const city =
+        document.getElementById("rewardCity").value.trim();
+
+
+    const formData = new URLSearchParams();
+
+    formData.append("email", email);
+    formData.append("mobile", mobile);
+    formData.append("city", city);
+
+
+    fetch(
+        "https://script.google.com/macros/s/AKfycbz18KIoGTZiWVIQDMfaoT7_yyXlIa3Qw4TCk-DgIQM9QLPhgJ4Xv02oJdxV_mWjOuY/exec",
+        {
+            method: "POST",
+            body: formData
+        }
+    )
+    .then(function(response) {
+
+        return response.text();
+
+    })
+    .then(function(result) {
+
+        console.log("Apps Script response:", result);
+
+        form.style.display = "none";
+
+        document.getElementById("rewardSuccess")
+            .style.display = "block";
+
+    })
+    .catch(function(error) {
+
+        console.error("Reward submission error:", error);
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+    });
+
+}
 
 </script>
 </body>
