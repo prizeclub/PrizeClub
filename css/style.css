@@ -1,0 +1,243 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f8f9fb;
+    color:#222;
+}
+
+.container{
+    width:95%;
+    max-width:1300px;
+    margin:auto;
+}
+
+section{
+    padding:40px 0;
+}
+/* =========================
+   HEADER
+========================= */
+
+.header,
+.navbar{
+    background:#ffffff;
+}
+
+.navbar{
+    min-height:75px;
+}
+
+.navbar-brand img{
+    height:55px;
+    width:auto;
+}
+
+.nav-link{
+    color:#0B2A66 !important;
+    font-weight:600;
+    margin-left:12px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#D4A017 !important;
+}
+
+.btn-warning{
+    background:#D4A017;
+    border:none;
+    color:#fff;
+    border-radius:30px;
+    padding:10px 22px;
+}
+
+.btn-warning:hover{
+    background:#b8860b;
+    color:#fff;
+}
+
+.shadow-sm{
+    box-shadow:0 4px 15px rgba(0,0,0,.08)!important;
+}
+/* =========================
+   FLOATING WHATSAPP BUTTON
+========================= */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:60px;
+
+    height:60px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    z-index:9999;
+
+    transition:.3s;
+
+}
+
+.whatsapp-float:hover{
+
+    transform:scale(1.1);
+
+    color:#fff;
+
+}
+/* ==========================
+   Product Card
+========================== */
+
+.product-card{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    transition:0.3s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,0.15)!important;
+}
+
+.product-card img{
+    transition:0.4s ease;
+}
+
+.product-card:hover img{
+    transform:scale(1.05);
+}
+
+.card-title{
+    min-height:52px;
+}
+
+.badge{
+    font-size:12px;
+    padding:8px 12px;
+    border-radius:30px;
+}
+
+.btn-warning{
+    font-weight:600;
+    border-radius:10px;
+}
+
+.text-muted{
+    font-size:14px;
+}
+/* Mobile Optimization */
+
+@media (max-width:768px){
+
+.card-img-top{
+
+height:220px !important;
+
+}
+
+.card-title{
+
+font-size:16px;
+
+}
+
+.btn{
+
+font-size:14px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+h2{
+
+font-size:24px;
+
+}
+
+#whatsappFloat img{
+
+width:55px;
+
+}
+
+footer{
+
+text-align:center;
+
+}
+
+}
+/* Better Mobile Product Page */
+
+@media (max-width:768px){
+
+#mainImage{
+
+width:100%;
+
+height:auto;
+
+}
+
+#thumbnailContainer{
+
+display:flex;
+
+overflow-x:auto;
+
+gap:10px;
+
+padding-bottom:10px;
+
+}
+
+#thumbnailContainer img{
+
+flex:0 0 auto;
+
+width:70px;
+
+height:70px;
+
+}
+
+.navbar-brand{
+
+font-size:20px;
+
+}
+
+}
