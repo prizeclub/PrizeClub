@@ -925,6 +925,27 @@ document.getElementById("rewardClose").onclick = function() {
 };
 
 
+let rewardSubmitted = false;
+
+document.getElementById("rewardForm").addEventListener("submit", function() {
+
+    rewardSubmitted = true;
+
+});
+
+
+document.getElementById("rewardSubmitFrame").addEventListener("load", function() {
+
+    if (rewardSubmitted) {
+
+        document.getElementById("rewardPopup").style.display = "none";
+
+        rewardSubmitted = false;
+
+    }
+
+});
+
 </script>
 </body>
 </html>
